@@ -18,4 +18,4 @@ Project to get familiarized with object-oriented language and main differences/a
 
 ## Usage
 
-```make```
+```make``` for each module
