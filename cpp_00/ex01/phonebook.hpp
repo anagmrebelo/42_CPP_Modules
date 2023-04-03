@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.hpp                                           :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:15:25 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/02 18:32:56 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/03 17:04:09 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __EX01_H__
-# define __EX01_H__
+#ifndef __PHONEBOOK_H__
+# define __Phonebook_H__
 
 # include <iostream>
 # include <iomanip>
 # include <stdlib.h>
 # include "Contact.hpp"
 
-# define	MAX_CONTACT 8
-# define	COL_WIDTH 10
+# define MAX_CONTACT 8
+# define COL_WIDTH 10
 
-//Add
-void		add_command ( Contact *phonebook );
+class Phonebook
+{
+public:
+	Phonebook ( void );
+	~Phonebook ( void );
 
-//Search
-void		search_command( Contact *phonebook );
-void		display_individually( Contact instance );
-int			display_in_list( Contact instance, int index );
-std::string	print_format( std::string str );
+    void	    add_command( void );
+    void        search_command( void );
+
+private:
+    Contact		_phonebook[MAX_CONTACT];
+};
 
 #endif

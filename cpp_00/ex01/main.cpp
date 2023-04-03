@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:15:35 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/02 18:35:57 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/03 16:11:23 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int	eval_command( std::string command )
 {
@@ -25,23 +25,27 @@ int	eval_command( std::string command )
 	return (0);
 }
 
-int	main ( void )
+int	main ( int argc, char **argv )
 {
 	std::string	command;
 	int			res;
-	Contact		phonebook[8];
-
-	while (1)
+    Phonebook   obj;
+	
+    (void) argv;
+    if (argc != 1)
+        return (1);
+    while (1)
 	{
 		std::cout << "Input a command: ";
-		std::getline(std::cin, command);
+		if (std::getline(std::cin, command).rdstate() != 0)
+            return (1);
 		res = eval_command(command);
 		if (res == 3)	// EXIT
 			break;
 		else if (res == 1)	// ADD
-			add_command(phonebook);
+			obj.add_command();
 		else if (res == 2)	// SEARCH
-				search_command(phonebook);
+			obj.search_command();
 	}
 	return (0);
 }

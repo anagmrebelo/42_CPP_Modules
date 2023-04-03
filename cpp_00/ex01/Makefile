@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+         #
+#    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 21:15:01 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/02 18:32:08 by anarebelo        ###   ########.fr        #
+#    Updated: 2023/04/03 15:54:29 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ BINARY				= phonebook
 # FILES
 # **************************************************************************** #
 SRCS				= 	Contact.cpp\
-						add.cpp\
-						search.cpp\
+						Phonebook.cpp\
 						main.cpp
 
 OBJS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.o}}
