@@ -1,60 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:30:33 by arebelo           #+#    #+#             */
-/*   Updated: 2022/06/29 20:30:35 by arebelo          ###   ########.fr       */
+/*   Updated: 2022/06/29 19:36:15 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen( void )
+Harl::Harl( void )
 {
 	return ;
 }
 
-Karen::~Karen( void )
+Harl::~Harl( void )
 {
 	return ;
 }
 
-void	Karen::debug( void )
+void	Harl::debug( void )
 {
-	std::cout << "[ DEBUG ]" << std::endl;
-	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl << std::endl;
+    std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special- ketchup burger. I really do!" << std::endl;
 	return ;
 }
 
-void	Karen::info( void )
+void	Harl::info( void )
 {
-	std::cout << "[ INFO ]" << std::endl;
-	std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!" << std::endl << std::endl;
+    std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 	return ;
 }
 
-void	Karen::warning( void )
+void	Harl::warning( void )
 {
-	std::cout << "[ WARNING ]" << std::endl;
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month." << std::endl << std::endl;
+    std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
 	return ;
 }
 
-void	Karen::error( void )
+void	Harl::error( void )
 {
-	std::cout << "[ ERROR ]" << std::endl;
-	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl << std::endl;
+    std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 	return ;
 }
 
-void	Karen::complain( std::string level)
+typedef void (Harl::*FnPtr)( void );
+
+void	Harl::complain( std::string level)
 {
 	int		i;
 	
-	std::string options[] = {
+    std::string options[] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
@@ -80,4 +82,4 @@ void	Karen::complain( std::string level)
 				break;
 		}
 	return ;
-	}
+}

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:27:54 by arebelo           #+#    #+#             */
-/*   Updated: 2022/06/29 16:52:19 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/03 12:12:04 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __KAREN_H__
-# define __KAREN_H__
+#ifndef __HARL_H__
+# define __HARL_H__
 
 # include <iostream>
 
-class	Karen
+class	Harl
 {
 public:
-	Karen( void );
-	~Karen( void );
+	Harl( void );
+	~Harl( void );
 
 	void	complain( std::string level);
 
