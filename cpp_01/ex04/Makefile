@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+         #
+#    By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2022/06/29 21:53:00 by arebelo          ###   ########.fr        #
+#    Updated: 2023/04/03 11:45:35 by anarebelo        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME	= replace
 
 INCLUDES = 	
 
-CC		= clang++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 16:37:48 by arebelo           #+#    #+#             */
-/*   Updated: 2022/06/29 16:49:42 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/03 12:03:32 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ int	main( int argc, char **argv )
 		i = 0;
 		while (i != std::string::npos)
 		{
-			i = str.find(s1, i + s2.length());
+			i = str.find(s1, i);
 			if ( i != std::string::npos)
 			{
 				str.erase(i, s1.length());
 				str.insert(i, s2);
+				i += s2.length();
 			}
 		}
 		ofs << str;
