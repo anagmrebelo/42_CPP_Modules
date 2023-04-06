@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:36:26 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 14:36:32 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/05 18:33:52 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Constructors
 FragTrap::FragTrap( void )
 {
-	std::cout << "ScavTrap default cosntructor was called" << std::endl;
+	std::cout << "FragTrap default constructor was called" << std::endl;
 	return ;
 }
 

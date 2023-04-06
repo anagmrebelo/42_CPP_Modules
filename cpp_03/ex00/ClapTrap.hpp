@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:15:12 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/05 01:10:51 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/05 15:43:36 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __CLAPTRAP_H__
-# define __CLAPTRAP_H__
+#ifndef __CLAPTRAP_HPP__
+# define __CLAPTRAP_HPP__
 
 # include <iostream>
 

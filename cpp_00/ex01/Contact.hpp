@@ -6,13 +6,13 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 21:14:53 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/03 15:53:14 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:36:32 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef __CONTACT_CLASS_H__
-# define __CONTACT_CLASS_H__
+#ifndef __CONTACT_CLASS_HPP__
+# define __CONTACT_CLASS_HPP__
 
 # include <iostream>
 

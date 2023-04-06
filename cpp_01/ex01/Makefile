@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+         #
+#    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/02 22:42:07 by anarebelo        ###   ########.fr        #
+#    Updated: 2023/04/05 19:30:20 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,11 @@ BINARY				= zombie
 # **************************************************************************** #
 SRCS				= Zombie.cpp\
 					ZombieHorde.cpp\
+					newZombie.cpp\
+					randomChump.cpp\
 					main.cpp
+
+MK					= Makefile
 
 OBJS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.o}}
 DEPS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.d}}
@@ -40,7 +44,7 @@ RM					= rm -rf
 # **************************************************************************** #
 all:	$(BINARY)
 
-$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp $(MK)
 					@mkdir -p $(dir $@)
 					$(CC) $(CFLAGS) $(DEPFLAGS) $(INCLUDE) $< -o $@
 

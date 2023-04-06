@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 13:50:20 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/02 22:57:50 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/05 19:34:20 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WEAPON_H__
-# define __WEAPON_H__
+#ifndef __WEAPON_HPP__
+# define __WEAPON_HPP__
 
 # include <iostream>
 

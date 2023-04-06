@@ -3,38 +3,58 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+         #
+#    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2022/07/06 13:30:33 by arebelo          ###   ########.fr        #
+#    Updated: 2023/04/05 16:55:18 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 	= ClapTrap.cpp\
-		  ScavTrap.cpp\
-		  main.cpp
+# NAME
+# **************************************************************************** #
+BINARY				= scavTrap
 
-OBJS	= ${SRCS:.cpp=.o}
-NAME	= ScavTrap
+# FILES
+# **************************************************************************** #
+SRCS				= ClapTrap.cpp\
+		  			ScavTrap.cpp\
+		  			main.cpp
 
-INCLUDES =	ClapTrap.hpp\
-			ScavTrap.hpp
+OBJS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.o}}
+DEPS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.d}}
 
-CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
-RM		= rm -f
+# DIRECTORY
+# **************************************************************************** #
+OBJS_DIR			= objs/
+SRCS_DIR			= 
 
-all:		${NAME}
+# COMPILATION
+# **************************************************************************** #
+LINK				= c++
+CC					= c++ -c
+DEPFLAGS			= -MMD -MP
+CFLAGS				= -Wall -Wextra -Werror 
+RM					= rm -rf
 
-${NAME}:	${OBJS} ${INCLUDES}
-		${CC} ${CFLAGS} ${SRCS} -o ${NAME}
+# RULES
+# **************************************************************************** #
+all:	$(BINARY)
+
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp
+					@mkdir -p $(dir $@)
+					$(CC) $(CFLAGS) $(DEPFLAGS) $(INCLUDE) $< -o $@
+
+$(BINARY): $(OBJS)
+					$(LINK) $(CFLAGS) $(INCLUDE) -o $@ $^ $(LIBS)
 
 clean:
-		${RM} ${OBJS}
+					@$(RM) $(OBJS_DIR)
 
-fclean:		clean
-		${RM} ${NAME}
+fclean: clean
+					@$(RM) $(BINARY)
 
-re:			fclean all
+re: fclean all
 
-.PHONY:		all clean fclean re
+-include ${DEPS}
+
+.PHONY: all bonus clean fclean re

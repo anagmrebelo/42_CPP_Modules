@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 13:59:41 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/02 22:59:29 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/05 19:33:09 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HUMANA_H__
-# define __HUMANA_H__
+#ifndef __HUMANA_HPP__
+# define __HUMANA_HPP__
 
 # include "Weapon.hpp"
 

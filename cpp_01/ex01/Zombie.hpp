@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 17:27:45 by arebelo           #+#    #+#             */
-/*   Updated: 2022/06/27 19:31:20 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/05 19:31:21 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_H__
-# define __ZOMBIE_H__
+#ifndef __ZOMBIE_HPP__
+# define __ZOMBIE_HPP__
 
 #include <iostream>
 

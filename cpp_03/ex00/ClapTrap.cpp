@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:40:32 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/05 01:14:10 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/05 14:33:24 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,14 @@ int	ClapTrap::getAttackDamage( void ) const
 void	ClapTrap::attack( std::string const & target )
 {
 		if (this->_energyPoints > 0)
-			std::cout << "ClapTrap " << this->_name << " attack " << target << " with " << this->_attackDamage << " points of damage!" << std::endl;
+			std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 			this->_energyPoints--;
 	return ;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	std::cout << "ClapTrap " << this->_name << " hit points after attack: ";
+	std::cout << "ClapTrap " << this->_name << " was attacked, its remaining hit points after attack are ";
 	if (this->_hitPoints >= amount)
 		this->_hitPoints -= amount;
 	else
@@ -96,7 +96,8 @@ void	ClapTrap::beRepaired( unsigned int amount)
 	if (this->_energyPoints > 0)
 	{
 		this->_hitPoints += amount;
-		std::cout << "ClapTrap " << this->_name << " hit points after repair: " << this->_hitPoints << std::endl;
+        this->_energyPoints--;
+		std::cout << "ClapTrap " << this->_name << " was repaired, its hit points after repair are " << this->_hitPoints << std::endl;
 	}
 	return ;
 }

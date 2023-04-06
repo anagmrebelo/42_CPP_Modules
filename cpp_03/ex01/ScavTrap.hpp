@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:08:14 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 13:57:10 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/05 16:51:09 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SCAVTRAP_H__
-# define __SCAVTRAP_H__
+#ifndef __SCAVTRAP_HPP__
+# define __SCAVTRAP_HPP__
 
 # include "ClapTrap.hpp"
 

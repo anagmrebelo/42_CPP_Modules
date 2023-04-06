@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:27:54 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/03 12:12:04 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/05 16:46:31 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HARL_H__
-# define __HARL_H__
+#ifndef __HARL_HPP__
+# define __HARL_HPP__
 
 # include <iostream>
 
