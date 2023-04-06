@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:12:21 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 15:28:16 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/06 17:32:09 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ DiamondTrap &	DiamondTrap::operator= (const DiamondTrap &rhs)
 {
 		this->_name = rhs.getName();
 		this->ClapTrap::_name = rhs.getName() + "_clap_name";
-		this->_hitpoints = rhs.getHitpoints();
+		this->_hitPoints = rhs.getHitpoints();
 		this->_energyPoints = rhs.getEnergyPoints();
 		this->_attackDamage = rhs.getAttackDamage();
 	return (*this);

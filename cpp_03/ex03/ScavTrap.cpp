@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:16:30 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 14:10:54 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/06 16:50:49 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Constructors
 ScavTrap::ScavTrap( void )
 {
-	std::cout << "ScavTrap default constructor was called" << std::endl;
+	std::cout << "ScavTrap default cosntructor was called" << std::endl;
 	return ;
 }
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap( std::string name )
 {
 	std::cout << "ScavTrap constructor was called" << std::endl;
 	this->_name = name;
-	this->_hitpoints = 100;
+	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	return ;
@@ -46,7 +46,7 @@ ScavTrap::~ScavTrap( void )
 ScavTrap & ScavTrap::operator=( ScavTrap const & rhs )
 {
 	this->_name = rhs.getName();
-	this->_hitpoints = rhs.getHitpoints();
+	this->_hitPoints = rhs.getHitpoints();
 	this->_energyPoints = rhs.getEnergyPoints();
 	this->_attackDamage = rhs.getAttackDamage();
 	return (*this);
@@ -61,6 +61,10 @@ void	ScavTrap::guardGate( void )
 
 void	ScavTrap::attack( std::string const & target )
 {
-	std::cout << "ScavTrap " << this->getName() << " attack " << target << " with " << this->getAttackDamage() << " points of damage!" << std::endl;
+	if (this->_energyPoints > 0)
+	{
+		std::cout << "ScavTrap " << this->getName() << " attacks " << target << " with " << this->getAttackDamage() << " points of damage!" << std::endl;
+		this->_energyPoints--;
+	}
 	return ;
 }
