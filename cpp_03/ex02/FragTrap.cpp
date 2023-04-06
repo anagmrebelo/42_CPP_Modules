@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:36:26 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/05 18:33:52 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/06 16:55:59 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap( std::string name )
 {
 	std::cout << "FragTrap constructor was called" << std::endl;
 	this->_name = name;
-	this->_hitpoints = 100;
+	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 	return ;
@@ -46,7 +46,7 @@ FragTrap::~FragTrap( void )
 FragTrap & FragTrap::operator=( FragTrap const & rhs )
 {
 	this->_name = rhs.getName();
-	this->_hitpoints = rhs.getHitpoints();
+	this->_hitPoints = rhs.getHitpoints();
 	this->_energyPoints = rhs.getEnergyPoints();
 	this->_attackDamage = rhs.getAttackDamage();
 	return (*this);
@@ -55,12 +55,16 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
 //Member functions
 void	FragTrap::highFivesGuys( void )
 {
-	std::cout << "FragTrap request you to high five someone!" << std::endl;
+	std::cout << "FragTrap requests you to high five someone!" << std::endl;
 	return ;
 }
 
 void	FragTrap::attack( std::string const & target )
 {
-	std::cout << "FragTrap " << this->getName() << " attack " << target << " with " << this->getAttackDamage() << " points of damage!" << std::endl;
+	if (this->_energyPoints > 0)
+	{
+		std::cout << "FragTrap " << this->getName() << " attacks " << target << " with " << this->getAttackDamage() << " points of damage!" << std::endl;
+		this->_energyPoints--;
+	}
 	return ;
 }

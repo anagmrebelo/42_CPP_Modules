@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/05 16:55:18 by arebelo          ###   ########.fr        #
+#    Updated: 2023/04/06 16:31:57 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ BINARY				= scavTrap
 SRCS				= ClapTrap.cpp\
 		  			ScavTrap.cpp\
 		  			main.cpp
+
+MK					= Makefile
 
 OBJS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.o}}
 DEPS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.d}}
@@ -40,7 +42,7 @@ RM					= rm -rf
 # **************************************************************************** #
 all:	$(BINARY)
 
-$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp $(MK)
 					@mkdir -p $(dir $@)
 					$(CC) $(CFLAGS) $(DEPFLAGS) $(INCLUDE) $< -o $@
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:22:53 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 14:41:52 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/06 16:55:14 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main( void )
 	std::cout << "Energy Points: " << instanceF.getEnergyPoints() << std::endl;
 	std::cout << "Attack Damage: "<< instanceF.getAttackDamage() << std::endl;
 	instanceF.attack("Enemy");
+	std::cout << "After attack, remaining energy Points are: " << instanceF.getEnergyPoints() << std::endl;
 	instanceF.highFivesGuys();
 //	instanceS.guardGate();
 	
