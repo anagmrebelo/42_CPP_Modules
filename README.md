@@ -6,7 +6,7 @@ Project to get familiarized with object-oriented language and main differences/a
 ## Grade
 | Module #  |      Grade   | New Concept(s) |
 | --------- | ------------ | ------------- |
-| Module 0  | WIP          | Specifities of the language when compared to C
+| Module 0  | 99/100       | Specifities of the language when compared to C
 | Module 1  | WIP          | Memory alloaction; references; switch
 | Module 2  | WIP          | Ad-hoc polymorphism; overloads; orthodox canonical classes
 | Module 3  | WIP          | Inheritance
