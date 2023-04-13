@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:12:21 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 17:32:09 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 19:03:28 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ DiamondTrap::DiamondTrap( void )
 	return ;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" ), ScavTrap( name + "_clap_name" ), FragTrap( name + "_clap_name" )
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" )
 {
 	std::cout << "DiamondTrap constructor was called" << std::endl;
 	this->_name = name;
-	ScavTrap::_energyPoints = 50;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:40:32 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 16:52:15 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 16:03:27 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 //Constructors
 ClapTrap::ClapTrap( void )
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitPoints( 10 ), _energyPoints( 10 ), _attackDamage( 0 )
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap( ClapTrap const & src )
 //Destructor
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 	return ;
 }
 
@@ -51,7 +51,7 @@ ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs )
 
 //Getters
 
-std::string	ClapTrap::getName( void ) const
+const std::string &	ClapTrap::getName( void ) const
 {
 	return (this->_name);
 }

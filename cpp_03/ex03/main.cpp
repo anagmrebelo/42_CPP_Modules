@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:22:53 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 14:41:52 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 18:32:04 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main( void )
 {
 	DiamondTrap	instanceD("Diamond");
-	/*ClapTrap	instanceC("Clap");
+	ClapTrap	instanceC("Clap");
 	ScavTrap	instanceS("Scav");
 	FragTrap	instanceF("Frag");
 
@@ -47,7 +47,7 @@ int	main( void )
 	std::cout << "Attack Damage: "<< instanceF.getAttackDamage() << std::endl;
 	instanceF.attack("Enemy");
 	instanceF.highFivesGuys();
-//	instanceS.guardGate();*/
+//	instanceS.guardGate();
 	
 	std::cout << std::endl;
 

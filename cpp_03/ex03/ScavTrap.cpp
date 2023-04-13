@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:16:30 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 16:50:49 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 16:01:27 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Constructors
 ScavTrap::ScavTrap( void )
 {
-	std::cout << "ScavTrap default cosntructor was called" << std::endl;
+	std::cout << "ScavTrap default constructor was called" << std::endl;
 	return ;
 }
 

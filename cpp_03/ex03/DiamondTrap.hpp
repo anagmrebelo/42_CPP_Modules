@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:02:26 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/06 15:28:43 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 16:04:34 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DIAMONDTRAP_H__
-# define __DIAMONDTRAP_H__
+#ifndef __DIAMONDTRAP_HPP__
+# define __DIAMONDTRAP_HPP__
 
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
