@@ -1,5 +1,17 @@
-#ifndef __FIXED_H__
-# define __FIXED_H__
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 13:46:24 by arebelo           #+#    #+#             */
+/*   Updated: 2023/04/13 13:46:35 by arebelo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef __FIXED_HPP__
+# define __FIXED_HPP__
 
 # include <iostream>
 # include <math.h>
@@ -33,11 +45,11 @@ public:
 	static Fixed const &	max( Fixed const & lhs, Fixed const & rhs );
 	static Fixed const &	min( Fixed const & lhs, Fixed const & rhs );
 	
-	int	getRawBits( void ) const;
+	int	    getRawBits( void ) const;
 	void	setRawBits( int const raw);
 
 	float	toFloat( void ) const;
-	int	toInt( void ) const;
+	int	    toInt( void ) const;
 
 private:
 	int			_rawBits;

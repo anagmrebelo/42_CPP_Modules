@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/04 13:45:19 by arebelo          ###   ########.fr        #
+#    Updated: 2023/04/13 13:55:15 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS				= Fixed.cpp\
 					bsp.cpp\
 					main.cpp
 
+MK					= Makefile
+
 OBJS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.o}}
 DEPS				=${addprefix ${OBJS_DIR}, ${SRCS:.cpp=.d}}
 
@@ -34,14 +36,14 @@ SRCS_DIR			=
 LINK				= c++
 CC					= c++ -c
 DEPFLAGS			= -MMD -MP
-CFLAGS				= -Wall -Wextra -Werror 
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
 RM					= rm -rf
 
 # RULES
 # **************************************************************************** #
 all:	$(BINARY)
 
-$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp $(MK)
 					@mkdir -p $(dir $@)
 					$(CC) $(CFLAGS) $(DEPFLAGS) $(INCLUDE) $< -o $@
 

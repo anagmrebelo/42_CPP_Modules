@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:15:12 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 16:51:53 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 15:49:41 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ public:
 	
 	ClapTrap &	operator=( ClapTrap const & rhs );	//Assigment overload
 
-	std::string	getName( void ) const;
-	int			getHitpoints( void ) const;
-	int			getEnergyPoints( void ) const;
-	int			getAttackDamage( void ) const;
+	const std::string &	getName( void ) const;
+	int					getHitpoints( void ) const;
+	int					getEnergyPoints( void ) const;
+	int					getAttackDamage( void ) const;
 
-	void		attack( std::string const & target );
-	void		takeDamage( unsigned int amount );
-	void		beRepaired( unsigned int amount );
+	void				attack( std::string const & target );
+	void				takeDamage( unsigned int amount );
+	void				beRepaired( unsigned int amount );
 
 protected:
-	std::string		_name;
-	unsigned int	_hitPoints;
-	unsigned int	_energyPoints;
-	unsigned int	_attackDamage;
+	std::string			_name;
+	unsigned int		_hitPoints;
+	unsigned int		_energyPoints;
+	unsigned int		_attackDamage;
 	
 	ClapTrap( void );					//Default constructor
 };

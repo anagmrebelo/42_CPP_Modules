@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 13:48:01 by arebelo           #+#    #+#             */
+/*   Updated: 2023/04/13 13:48:28 by arebelo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Point.hpp"
 #include "Fixed.hpp"
 
@@ -16,7 +28,7 @@ int	main( void )
 
 	std::cout << std::endl << "Outside Triangle -> should print 0" << std::endl;
 	{
-		Point	a(1.0f, 0.0f);
+		Point	a(1.0f, 0.0f);	
 		Point	b(2.0f,1.0f);
 		Point	c(3.0f, 0.0f);
 		Point	point(2.0f, 3.0f);

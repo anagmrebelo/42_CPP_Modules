@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 13:50:20 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/05 19:34:20 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 14:03:48 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ public:
 	Weapon( std::string type );
 	~Weapon( void );
 
-	std::string	getType( void ) const;
-	void		setType( std::string str );
+	const std::string	& getType( void ) const;
+	void				setType( std::string str );
 
 private:
 	std::string	_type;

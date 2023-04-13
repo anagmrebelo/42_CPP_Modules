@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/06 16:31:32 by arebelo          ###   ########.fr        #
+#    Updated: 2023/04/13 15:47:59 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS_DIR			=
 LINK				= c++
 CC					= c++ -c
 DEPFLAGS			= -MMD -MP
-CFLAGS				= -Wall -Wextra -Werror 
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
 RM					= rm -rf
 
 # RULES

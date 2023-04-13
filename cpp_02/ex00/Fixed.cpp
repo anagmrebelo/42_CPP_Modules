@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 13:40:47 by arebelo           #+#    #+#             */
+/*   Updated: 2023/04/13 13:40:58 by arebelo          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 const int	Fixed::_frBits = 8;
@@ -33,7 +45,7 @@ Fixed &	Fixed::operator=( Fixed const & rhs )
 }
 
 //Getters
-int	Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_rawBits;

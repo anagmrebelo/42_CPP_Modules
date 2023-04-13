@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 13:51:52 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/05 19:34:09 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/13 14:06:02 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon( void )
 	return ;
 }
 
-std::string	Weapon::getType( void ) const
+const std::string	& Weapon::getType( void ) const
 {
 	return this->_type;
 }

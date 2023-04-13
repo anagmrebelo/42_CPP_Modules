@@ -1,5 +1,5 @@
-#ifndef __FIXED_H__
-# define __FIXED_H__
+#ifndef __FIXED_HPP__
+# define __FIXED_HPP__
 
 # include <iostream>
 # include <math.h>
