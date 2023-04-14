@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:23:13 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 11:38:46 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/14 14:08:15 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __CURE_H__
-# define __CURE_H__
+#ifndef __CURE_HPP__
+# define __CURE_HPP__
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"

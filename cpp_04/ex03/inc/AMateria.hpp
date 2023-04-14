@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:37:21 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/11 18:30:10 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:08:00 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __AMATERIA_H__
-# define __AMATERIA_H__
+#ifndef __AMATERIA_HPP__
+# define __AMATERIA_HPP__
 
 # include "ICharacter.hpp"
 # include <iostream>

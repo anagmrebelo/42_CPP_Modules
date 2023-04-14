@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:52:03 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 11:38:03 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/14 14:10:29 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,14 @@ public:
 	void				unequip( int idx );
 	virtual void		use( int idx, ICharacter & target );
 	void				printMaterias( void );
-	void				printTrash( void );
 
 
 private:
 	Character( void );
 
 	std::string			_name;
-	int					_tCounter;
 	static const int	_maxInv = 4;
-	static const int	_maxTrash = 100;
 	AMateria *			_inventory[_maxInv];
-	AMateria *			_trash[_maxTrash];
 };
 
 #endif

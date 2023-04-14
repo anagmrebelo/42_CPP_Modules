@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:58:31 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/11 18:30:26 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:12:16 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Character::Character( void )
 	return ;
 }
 
-Character::Character( std::string name) : _name( name ), _tCounter( 0 )
+Character::Character( std::string name) : _name( name )
 {
 	int	i;
 
@@ -52,24 +52,24 @@ Character::Character( Character const & src ) : _name( src.getName() )
 Character::~Character( void )
 {
 	int	i;
+	int j;
 
 	std::cout << "Character " << this->_name << " deconstructor called" << std::endl;
 	i = 0;
 	while (i < Character::_maxInv)
 	{
 		if (this->_inventory[i])
-			delete this->_inventory[i];
-		i++;
-	}
-	i = 0;
-	if(this->_tCounter > 0)
-	{
-		while (i < this->_tCounter)
 		{
-			if (this->_trash[i])
-				delete this->_trash[i];
-			i++;
+			delete this->_inventory[i];
+			j = i + 1;
+			while (j < Character::_maxInv)
+			{
+				if (this->_inventory[j] == this->_inventory[i])
+					this->_inventory[j] = NULL;
+				j++;
+			}
 		}
+		i++;
 	}
 	return ;
 }
@@ -78,11 +78,22 @@ Character::~Character( void )
 Character &	Character::operator=( Character const & rhs )
 {
 	int	i;
+	int	j;
+
 	i = 0;
 	while ( i < Character::_maxInv )
 	{
 		if (this->_inventory[i])
+		{
 			delete this->_inventory[i];
+			j = i + 1;
+			while (j < Character::_maxInv)
+			{
+				if (this->_inventory[j] == this->_inventory[i])
+					this->_inventory[j] = NULL;
+				j++;
+			}
+		}
 		if (rhs._inventory[i])
 			this->_inventory[i] = rhs._inventory[i]->clone();
 		else
@@ -113,16 +124,7 @@ void	Character::equip( AMateria * m )
 	while (i < Character::_maxInv && _inventory[i])
 		i++;
 	if (i < Character::_maxInv)
-	{
 		this->_inventory[i] = m;
-		i = 0;
-		while (i < this->_tCounter)
-		{
-			if (m == this->_trash[i])
-				this->_trash[i] = 0;
-			i++;
-		}
-	}
 	else
 		std::cout << "Character inventory is full; Free materia if necessary" << std::endl;
 	return ;
@@ -130,22 +132,9 @@ void	Character::equip( AMateria * m )
 
 void	Character::unequip( int idx )
 {
-	int i;
-	int	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (j < this->_tCounter && j < Character::_maxTrash)
-	{
-		if (!this->_trash[j])
-			break;
-		j++;
-	}
-	if (j >= Character::_maxTrash )
-	{
-		std::cout << "Cannot unequip more materias" << std::endl;
-		return;
-	}
 	if (idx < Character::_maxInv && idx >= 0 && this->_inventory[idx])
 	{
 		while(i < Character::_maxInv)
@@ -157,10 +146,7 @@ void	Character::unequip( int idx )
 			}
 			i++;
 		}
-		this->_trash[j] = _inventory[idx];
 		this->_inventory[idx] = NULL;
-		if (j == this->_tCounter)
-			this->_tCounter++;
 	}
 	else
 		std::cout << "Insert valid input" << std::endl;
@@ -187,22 +173,6 @@ void	Character::printMaterias( void )
 			std::cout << this->getName() << " inventory[" << i << "] = " << this->_inventory[i]/*->getType() */<< std::endl;
 		else
 			std::cout << this->getName() << " inventory[" << i << "] = " << this->_inventory[i] << std::endl;
-		i++;
-	}
-	return ;
-}
-
-void	Character::printTrash( void )
-{
-	int i;
-
-	i = 0;
-	while (i < this->_tCounter)
-	{
-		if (this->_trash[i])
-			std::cout << this->getName() << " trash[" << i << "] = " << this->_trash[i]/*->getType() */<< std::endl;
-		else
-			std::cout << this->getName() << " trash[" << i << "] = " << this->_trash[i] << std::endl;
 		i++;
 	}
 	return ;

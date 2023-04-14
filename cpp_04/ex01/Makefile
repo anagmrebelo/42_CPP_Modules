@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+         #
+#    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/04/06 10:25:45 by anarebelo        ###   ########.fr        #
+#    Updated: 2023/04/14 14:10:10 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRCS_DIR			= srcs/
 LINK				= c++
 CC					= c++ -c
 DEPFLAGS			= -MMD -MP
-CFLAGS				= -Wall -Wextra -Werror 
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
 RM					= rm -rf
 
 # RULES

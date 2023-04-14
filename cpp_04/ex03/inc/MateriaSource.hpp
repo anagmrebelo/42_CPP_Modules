@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:44:44 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/11 18:30:20 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:09:13 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __MATERIASOURCE_H__
-# define __MATERIASOURCE_H__
+#ifndef __MATERIASOURCE_HPP__
+# define __MATERIASOURCE_HPP__
 
 # include "AMateria.hpp"
 # include "IMateriaSource.hpp"

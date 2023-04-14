@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:26:19 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 11:39:48 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/14 14:12:39 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,17 @@ int main( void )
 		vilma->equip(NULL);
 		
 		AMateria* tmp;
-		tmp = src->createMateria("ice");
-		vilma->equip(tmp);
+		AMateria* tmp0;
+
+		tmp0 = src->createMateria("ice");
+		vilma->equip(tmp0);
 		tmp = src->createMateria("ice");
 		vilma->equip(tmp);
 		tmp = src->createMateria("cure");
 		vilma->equip(tmp);
 		tmp = src->createMateria("cure");
 		vilma->equip(tmp);
+		
 		tmp = src->createMateria("ice");
 		vilma->equip(tmp);
 
@@ -77,14 +80,18 @@ int main( void )
 
 		std::cout << std::endl;
 		oktorok->equip(tmp);
+		oktorok->equip(tmp);
+		oktorok->printMaterias();
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
 	std::cout << "5. Testing Character Assignation overload \"vilma = oktorok\" for deep copy and changed vilma afterwards" << std::endl;	
+
 		*oktorok = *vilma;
 		
 		vilma->unequip(0);
+		delete tmp0;
 		std::cout << "VILMA" << std::endl;
 		vilma->printMaterias();
 		std::cout << std::endl;
@@ -98,8 +105,8 @@ int main( void )
 	std::cout << "6. Testing character copy constructor for deep copy \"stardust = Character(vilma)\" and changed vilma afterwards" << std::endl;
 		Character* stardust = new Character(*vilma);
 		
-		tmp = src->createMateria("ice");
-		vilma->equip(tmp);
+		tmp0 = src->createMateria("ice");
+		vilma->equip(tmp0);
 		std::cout << "VILMA" << std::endl;
 		vilma->printMaterias();
 		std::cout << std::endl;
@@ -113,6 +120,7 @@ int main( void )
 // ------------------------------------------------------------------------------------ //
 	
 	std::cout << "7. \"vilma\" using all equiped materias on \"oktorok\" " << std::endl;
+		vilma->printMaterias();
 		vilma->use(0, *oktorok);
 		vilma->use(1, *oktorok);
 		vilma->use(2, *oktorok);
@@ -125,6 +133,7 @@ int main( void )
 
 	std::cout << "8. \"vilma\" trying to use unequiped materias on \"oktorok\" " << std::endl;
 		vilma->unequip(0);
+		delete tmp0;
 		vilma->use(0, *oktorok);
 
 	std::cout << std::endl;
@@ -146,28 +155,17 @@ int main( void )
 		lucifer->unequip(3);
 		lucifer->equip(cure);
 		lucifer->equip(ice);
+		
+		lucifer->unequip(3);
+		lucifer->unequip(8);
 
 		lucifer->printMaterias();
-		lucifer->printTrash();
 
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
-
-	std::cout << "10. Testing if unequiped materia is freed" << std::endl;
-
-		ICharacter* test = new Character("test");
-		
-		tmp = src->createMateria("ice");
-		test->equip(tmp);
-		test->unequip(0);
-
-	std::cout << std::endl;
-
-// ------------------------------------------------------------------------------------ //
-	std::cout << "11. Deleting \"vilma\", \"oktorok\", \"stardust\" and \"lucifer\"" << std::endl;
+	std::cout << "10. Deleting \"vilma\", \"oktorok\", \"stardust\" and \"lucifer\"" << std::endl;
 	
-	delete test;
 	delete lucifer;
 	delete stardust;
 	delete oktorok;

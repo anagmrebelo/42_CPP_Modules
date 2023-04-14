@@ -24,7 +24,7 @@ Cure::Cure( Cure const & src )
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 	this->_type = "cure";
-	(void) src;			
+	(void) src;
 	return ;
 }
 

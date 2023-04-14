@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arebelo <arebelo@student.42barcelo>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:09:08 by arebelo           #+#    #+#             */
-/*   Updated: 2022/07/11 17:28:22 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:08:56 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __IMATERIASOURCE_H__
-# define __IMATERIASOURCE_H__
+#ifndef __IMATERIASOURCE_HPP__
+# define __IMATERIASOURCE_HPP__
 
 # include "AMateria.hpp"
 # include <iostream>
