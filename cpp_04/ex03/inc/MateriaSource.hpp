@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:44:44 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/14 14:09:13 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:25:04 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ class	MateriaSource : public IMateriaSource
 {
 public:
 	MateriaSource( void );
+	MateriaSource( MateriaSource const & src );
 	virtual 	~MateriaSource( void );
+
+	MateriaSource &	operator=( MateriaSource const & rhs );
+
 	void		learnMateria( AMateria * src );
 	AMateria *	createMateria( std::string const & type );
 	void		printMaterias( void );

@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:52:06 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/14 14:12:43 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/04/14 14:23:26 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,20 @@ MateriaSource::MateriaSource( void ) : _counter( 0 )
 	while (i < MateriaSource::_maxInv)
 	{
 		this->_inventory[i] = NULL;
+		i++;
+	}
+	return ;
+}
+
+MateriaSource::MateriaSource( MateriaSource const & src  ) : _counter( src._counter )
+{
+	int	i;
+
+	std::cout <<"MateriaSource default constructor called" << std::endl;
+	i = 0;
+	while (i < MateriaSource::_maxInv)
+	{
+		this->_inventory[i] = src._inventory[i];
 		i++;
 	}
 	return ;
@@ -51,6 +65,36 @@ MateriaSource::~MateriaSource( void )
 		i++;
 	}
 	return ;
+}
+
+//Assignation overload
+MateriaSource &	MateriaSource::operator=( MateriaSource const & rhs )
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while ( i < MateriaSource::_maxInv )
+	{
+		if (this->_inventory[i])
+		{
+			delete this->_inventory[i];
+			j = i + 1;
+			while (j < MateriaSource::_maxInv)
+			{
+				if (this->_inventory[j] == this->_inventory[i])
+					this->_inventory[j] = NULL;
+				j++;
+			}
+		}
+		if (rhs._inventory[i])
+			this->_inventory[i] = rhs._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+		i++;
+	}
+	this->_counter = rhs._counter;
+	return (*this);
 }
 
 //Member functions and methods
