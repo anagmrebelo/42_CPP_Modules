@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:34:07 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 09:46:02 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:40:55 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ public:
 
 	Dog &			operator=( Dog const & rhs );
 
+	Brain &			getBrain( void ) const;
 	virtual void	makeSound( void ) const;
+private:
+	Brain *		_brain;
 };
 
 #endif

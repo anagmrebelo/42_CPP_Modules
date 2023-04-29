@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:02:33 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 10:18:36 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:39:07 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Animal::~Animal( void )
 Animal & Animal::operator=( Animal const & rhs )
 {
 	this->_type = rhs.getType();
-	*this->_brain = rhs.getBrain();
 	return (*this);
 }
 
@@ -51,11 +50,6 @@ Animal & Animal::operator=( Animal const & rhs )
 std::string	Animal::getType( void ) const
 {
 	return (this->_type);
-}
-
-Brain &	Animal::getBrain( void ) const
-{
-	return (*this->_brain);
 }
 
 //Member functions and methods

@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 19:12:31 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 10:24:21 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:41:14 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,17 @@ Dog::~Dog( void )
 Dog &	Dog::operator=( Dog const & rhs )
 {
 	this->_type = rhs.getType();
+	if (this->_brain)
+		delete this->_brain;
 	this->_brain = new Brain();
 	*this->_brain = rhs.getBrain();
 	return (*this);
+}
+
+// Getters
+Brain &	Dog::getBrain( void ) const
+{
+	return (*this->_brain);
 }
 
 //Member functions and methods

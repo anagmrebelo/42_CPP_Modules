@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:57:59 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 10:16:41 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:40:30 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ public:
 	Animal &	operator=( Animal const & rhs );
 
 	std::string		getType( void ) const;
-	Brain &			getBrain( void ) const;
 	virtual void	makeSound( void ) const;
 
 protected:
 	std::string	_type;
-	Brain *		_brain;
 };
 
 #endif

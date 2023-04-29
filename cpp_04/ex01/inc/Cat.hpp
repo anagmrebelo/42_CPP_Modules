@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 19:10:43 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 09:59:46 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:40:49 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ public:
 	~Cat( void );
 
 	Cat &			operator=( Cat const & rhs );
-
+	
+	Brain &			getBrain( void ) const;
 	virtual void	makeSound( void ) const;
+private:
+	Brain *		_brain;
 };
 
 #endif

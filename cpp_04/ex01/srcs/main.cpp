@@ -6,7 +6,7 @@
 /*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:19:40 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 10:48:30 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/04/29 22:29:18 by anarebelo        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int	main( void )
 		dog1->getBrain().setIdeas(200 , "Dog2 was created with this value");
 		dog1->getBrain().getIdeas(200);
 
+	delete dog1;
+	delete dog2;
 	return (0);	
 }
