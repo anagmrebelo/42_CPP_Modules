@@ -43,7 +43,6 @@ AAnimal::~AAnimal( void )
 AAnimal & AAnimal::operator=( AAnimal const & rhs )
 {
 	this->_type = rhs.getType();
-	*this->_brain = rhs.getBrain();
 	return (*this);
 }
 
@@ -51,11 +50,6 @@ AAnimal & AAnimal::operator=( AAnimal const & rhs )
 std::string	AAnimal::getType( void ) const
 {
 	return (this->_type);
-}
-
-Brain &	AAnimal::getBrain( void ) const
-{
-	return (*this->_brain);
 }
 
 //Member functions and methods

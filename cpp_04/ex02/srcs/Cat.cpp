@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 19:24:10 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 11:04:41 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/05/02 11:19:05 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,17 @@ Cat::~Cat( void )
 Cat &	Cat::operator=( Cat const & rhs )
 {
 	this->_type = rhs.getType();
+	if (this->_brain)
+		delete this->_brain;
 	this->_brain = new Brain();
 	*this->_brain = rhs.getBrain();
 	return (*this);
+}
+
+// Getters
+Brain &	Cat::getBrain( void ) const
+{
+	return (*this->_brain);
 }
 
 //Member functions and methods

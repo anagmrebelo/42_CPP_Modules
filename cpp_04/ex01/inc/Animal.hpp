@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:57:59 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/29 22:40:30 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/05/02 11:19:25 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define __ANIMAL_HPP__
 
 # include <iostream>
-# include "Brain.hpp"
 
 class	Animal
 {

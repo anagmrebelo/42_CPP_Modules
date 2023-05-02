@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:34:07 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/06 10:59:29 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/05/02 11:18:37 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __DOG_HPP__
 
 # include "../inc/AAnimal.hpp"
+# include "Brain.hpp"
 
 class	Dog : public AAnimal
 {
@@ -24,7 +25,11 @@ public:
 
 	Dog &			operator=( Dog const & rhs );
 
+	Brain &			getBrain( void ) const;
 	virtual void	makeSound( void ) const;
+
+private:
+	Brain *			_brain;
 };
 
 #endif

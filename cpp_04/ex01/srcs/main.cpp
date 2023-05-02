@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anarebelo <anarebelo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:19:40 by arebelo           #+#    #+#             */
-/*   Updated: 2023/04/29 22:29:18 by anarebelo        ###   ########.fr       */
+/*   Updated: 2023/05/02 11:10:55 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	main( void )
 	i = -1;
 	while (++i < (N/2))
 		animals[i] = new Dog();
-	while (i++ < N )
-		animals[i] = new Cat();
+	while (i < N )
+		animals[i++] = new Cat();
 	
 	std::cout << std::endl;
 	
-	while(--i > 0)
+	while(--i >= 0)
 		delete animals[i];
 	delete [] animals;
 
