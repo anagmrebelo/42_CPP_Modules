@@ -5,6 +5,11 @@ class	ScalarConverter
 {
 public:
 	static void convert(std::string str_lit);
+
+private:
+	ScalarConverter( void );
+	ScalarConverter(ScalarConverter const & src);
+	~ScalarConverter( void );
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/08/26 17:36:02 by arebelo          ###   ########.fr        #
+#    Updated: 2023/10/03 15:58:57 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,10 @@ BINARY				= a.out
 
 # FILES
 # **************************************************************************** #
-SRCS 				= 	printConversion.cpp\
-						ScalarConverter.cpp\
+SRCS 				= 	ScalarConverter.cpp\
+						Exception.cpp\
+						findType.cpp\
 						main.cpp
-						# findType.cpp\
-						# Exception.cpp\
 
 MK					= Makefile
 

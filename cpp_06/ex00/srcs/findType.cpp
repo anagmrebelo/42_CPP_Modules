@@ -6,11 +6,13 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 00:41:44 by arebelo           #+#    #+#             */
-/*   Updated: 2023/08/26 17:28:58 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/10/03 16:02:43 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+# include <limits.h>
+# include <iostream>
+# include "Exception.hpp"
 
 int	ft_isprint(int c)
 {
