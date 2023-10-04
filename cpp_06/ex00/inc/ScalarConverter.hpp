@@ -10,6 +10,8 @@ private:
 	ScalarConverter( void );
 	ScalarConverter(ScalarConverter const & src);
 	~ScalarConverter( void );
+	ScalarConverter &	operator=( ScalarConverter const & rhs );
+
 };
 
 #endif

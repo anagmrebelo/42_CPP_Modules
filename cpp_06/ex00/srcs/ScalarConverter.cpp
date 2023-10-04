@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:36:46 by arebelo           #+#    #+#             */
-/*   Updated: 2023/10/03 16:00:06 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/10/04 12:26:40 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ ScalarConverter::ScalarConverter(ScalarConverter const & src){
 //Destructors
 ScalarConverter::~ScalarConverter( void ){
 	return ;
+}
+
+//Assignation overload
+ScalarConverter &	ScalarConverter::operator=( ScalarConverter const & rhs )
+{
+	std::cout << "Assignation not allowed for ScalarConverter's class" << std::endl;
+	( void ) rhs;
+	return (*this);
 }
 
 // Static functions
