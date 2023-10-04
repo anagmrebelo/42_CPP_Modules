@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/10/04 12:15:47 by arebelo          ###   ########.fr        #
+#    Updated: 2023/10/04 15:34:08 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BINARY				= a.out
 # FILES
 # **************************************************************************** #
 SRCS 				= main.cpp\
-					Serializer.cpp
+					functions.cpp
 
 
 MK					= Makefile
@@ -41,7 +41,7 @@ INC_DIR				= inc
 LINK				= c++
 CC					= c++ -c
 DEPFLAGS			= -MMD -MP
-CFLAGS				= -Wall -Wextra -Werror -std=c++98
+CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g
 RM					= rm -rf
 INCLUDE				= -I $(INC_DIR)
 
