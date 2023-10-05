@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:36:46 by arebelo           #+#    #+#             */
-/*   Updated: 2023/10/05 16:04:50 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/10/05 16:23:01 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ScalarConverter::convert(std::string str_lit)
 
 	// Char
 	std::cout << "char: ";
-	if (original > std::numeric_limits<char>::max() || original < std::numeric_limits<char>::min())
+	if (original > std::numeric_limits<char>::max() || original < std::numeric_limits<char>::min() || isnan(original))
 		std::cout << "impossible" << std::endl;
 	else if (!ft_isprint(original))
 		std::cout << "Non displayable" << std::endl;
@@ -74,7 +74,7 @@ void	ScalarConverter::convert(std::string str_lit)
 
 	// Int
 	std::cout << "int: ";
-	if (original > std::numeric_limits<int>::max() || original < std::numeric_limits<int>::lowest())
+	if (original > std::numeric_limits<int>::max() || original < std::numeric_limits<int>::lowest() || isnan(original))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(original) << std::endl;
@@ -148,6 +148,10 @@ static std::string findType( std::string str )
 {
 	size_t	i;
 
+	if (str == "-inf" || str == "+inf" || str == "inf" || str == "nan")
+	{
+		return "special_case";
+	}
 	i = findPrintChar(str);
 	if (i == UINT_MAX)
 		return ("int");
