@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:36:46 by arebelo           #+#    #+#             */
-/*   Updated: 2023/10/05 12:04:42 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/10/05 16:04:50 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	ScalarConverter::convert(std::string str_lit)
 		try
 		{
 			original = std::stold(str_lit);
-			std::cout << "original: "<< original << std::endl;
 		}
 		catch (std::exception &e)
 		{
