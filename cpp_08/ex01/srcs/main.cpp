@@ -140,28 +140,27 @@ int	main(void)
 		}
 	std::cout << std::endl << "----------------------------------------------------" << std::endl;
 
-	// std::cout << std::endl << "11. Try to add character 'c'" << std::endl;
+	std::cout << std::endl << "11. Add new vector to Span" << std::endl;
 
-	// 	try	
-	// 	{
-	// 		std::vector<int> vec {1, 2, 3};
-	// 		std::vector<int>::iterator it1 = vec.begin();
-	// 		std::vector<int>::iterator it2 = vec.end();
+		try	
+		{
+			std::vector<int> vec;
+			vec.push_back(1);
+			vec.push_back(2);
+			vec.push_back(3);
+			std::vector<int>::iterator it1 = vec.begin();
+			std::vector<int>::iterator it2 = vec.end();
 
-	// 		sp1.addNumber(it1, it2);
-	// 	}
-	// 	catch(const std::exception& e)
-	// 	{
-	// 		std::cerr << e.what() << '\n';
-	// 	}
-	// std::cout << std::endl << "----------------------------------------------------" << std::endl;
+			sp1.addNumber(it1, it2);
+			sp1.printSpan();
+			std::cout << "Longest span: " << sp1.longestSpan() << std::endl;
+			std::cout << "Shortest span: " << sp1.shortestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	std::cout << std::endl << "----------------------------------------------------" << std::endl;
 
 	return (0);
-}
-
-//TO DOs
-	// Testar com iterators de listas e outros container con int
-	// Try with a vector of 10k and try functions
-	// How to make sure what is inside iterator is int - try with chars
-	// How to make sure if it doesnt accept int or char instead of iterators
-	// REVER addNumber() - perceber se é suposto receber ints ou iterators
+}	

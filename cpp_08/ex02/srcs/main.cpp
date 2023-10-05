@@ -22,7 +22,7 @@ int	main( void )
 
 	std::cout << "3. Should print < 1 3 4 5 6 >" << std::endl;
 		mStack.push(3);
-		mStack.push(3);
+		mStack.push(4);
 		mStack.push(5);
 		mStack.push(6);
 

@@ -56,6 +56,14 @@ void			Span::addNumber( int add )
 	return ;
 }
 
+void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end )
+{
+	if (_arr.size() + (end - begin) >  _max)
+		throw Span::MaxElementsException();
+	_arr.insert(_arr.end(), begin, end);
+	return ;
+}	
+
 unsigned int	Span::shortestSpan( void )
 {
 	if (_arr.size() < 2)

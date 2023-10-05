@@ -24,14 +24,7 @@ public:
     void             printSpan( void );
 
     void    		addNumber( int add );
-    template< class T>   
-    void    		addNumber(typename T::iterator begin, typename T::iterator end )
-    {
-        if (_arr.size() + (end - begin) > _max)
-            throw Span::MaxElementsException();
-        _arr.insert(_arr.end(), begin, end);
-        return ;
-    }
+    void    		addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end );
 
     class MaxElementsException : public std::exception
     {

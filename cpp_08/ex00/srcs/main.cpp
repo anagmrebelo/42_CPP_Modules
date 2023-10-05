@@ -6,8 +6,14 @@
 int	main( int argc, char **argv )
 {
 
-	std::vector<int> arr_int = { 1, 2, 3, 4, 5 }; 	
-	std::list<int>	lst_int({1, 2, 3, 4, 5});	//List of 5 elements initialized with 2
+	std::vector<int> arr_int;
+	for (int i = 1; i <= 5; ++i) {
+        arr_int.push_back(i);
+    } 	
+	std::list<int>	lst_int;
+	for (int i = 1; i <= 5; ++i) {
+        lst_int.push_back(i);
+    }
 
 	(void) argc;
 	(void) argv;
