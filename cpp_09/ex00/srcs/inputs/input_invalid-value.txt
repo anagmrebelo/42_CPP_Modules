@@ -1,0 +1,9 @@
+date | value
+
+Type of error: "Error: not a positive number."
+2012-01-11 | -1
+2012-01-11 | -0
+
+Type of error: "Error: too large a number."
+2012-01-11 | 1001
+2012-01-11 | 2147483648
