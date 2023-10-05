@@ -6,7 +6,7 @@
 #    By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 18:20:34 by arebelo           #+#    #+#              #
-#    Updated: 2023/10/04 13:01:30 by arebelo          ###   ########.fr        #
+#    Updated: 2023/10/05 14:40:12 by arebelo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,7 @@ BINARY				= a.out
 # FILES
 # **************************************************************************** #
 SRCS 				= main.cpp\
-					Serializer.cpp\
-					A.cpp
-
+					Serializer.cpp
 
 MK					= Makefile
 
