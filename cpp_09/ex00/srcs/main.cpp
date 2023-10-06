@@ -1,17 +1,33 @@
-int main (int argc, char *argv)
-{
-	if (isInvalidArgs(argc, argv))
-		return (1);
+#include <fstream>
+#include <iostream>
+#include "BitcoinExchange.hpp"
 
-	// Read data.csv and save into map
-		// If invalid db then error
-			// invalid means only or column or more than 2
-			// first string is not valid date
-			// second string is not float
-			// delimeter is not ','
+static void validateArgs(int argc, char **argv)
+{
+	std::fstream argFile;
+
+	if (argc != 2)
+		throw BitcoinExchange::CannotOpenFile(argv[1]);
+
+	argFile.open(argv[1]);
+	if (argFile.fail())
+		throw BitcoinExchange::CannotOpenFile(argv[1]);
+	
+	argFile.close();
+}
+
+int main (int argc, char **argv)
+{
+	try {
+		validateArgs(argc, argv);
+		BitcoinExchange bitcoinExchange = BitcoinExchange("./srcs/data.csv", argv[1]);
+		bitcoinExchange.printConversions();
+	} catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
 
 	// Read input file line by line
 		// print line by line 
-		// error for bad dates, non positive nb, bigger than 1000, delimeter not |
 	return (0);
 }
