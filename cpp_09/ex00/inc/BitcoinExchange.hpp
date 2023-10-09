@@ -5,9 +5,10 @@
 # include <fstream>
 # include <map>
 # include <string>
-#include <sstream>
-#include <ctime>
-#include <string> 
+# include <sstream>
+# include <ctime>
+# include <string>
+# include <limits>
 
 class BitcoinExchange
 {
@@ -17,6 +18,7 @@ public:
 
 	//Methods
 	void printConversions();
+	float	findClosestDateValue(std::string dateStr);
 
 	//Exceptions
 	class	CannotOpenFile : public std::exception

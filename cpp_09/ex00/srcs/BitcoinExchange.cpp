@@ -25,13 +25,13 @@ BitcoinExchange::BitcoinExchange( std::string dbPath, std::string requestPath ) 
 	{
 		try
 		{
-			validate_structure(line, " | ");
+			validate_structure(line, ",");
 			std::string dateStr = line.substr(0, line.find(","));
 			validate_date(dateStr);
 			std::string valueStr = line.erase(0, line.find(",") + 1);
 			validate_value(valueStr);
 
-			std::cout << _db[dateStr] << std::endl;
+			_db[dateStr] = stof(valueStr);
 		}
 		catch (std::exception &e)
 		{
@@ -64,13 +64,21 @@ void BitcoinExchange::printConversions()
 	{
 		try
 		{
-			validate_structure(line, ",");
-			std::string dateStr = line.substr(0, line.find(","));
+			validate_structure(line, " | ");
+			std::string dateStr = line.substr(0, line.find(" | "));
 			validate_date(dateStr);
-			std::string valueStr = line.erase(0, line.find(",") + 1);
+			std::string valueStr = line.erase(0, line.find(" | ") + 3);
 			validate_value_max(valueStr);
+			float valueFloat = std::stof(valueStr);
 
-			_db[dateStr] = stof(valueStr);
+			std::map<std::string, float>::iterator db_it = _db.find(dateStr);
+			float	db_float;
+    		if(db_it == _db.end()) 
+        		db_float = findClosestDateValue(dateStr); 
+    		else
+				db_float = db_it->second;
+
+			std::cout << dateStr << " => " << valueFloat << " = " <<  valueFloat * db_float << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -83,6 +91,39 @@ void BitcoinExchange::printConversions()
 }
 
 // Utils
+float BitcoinExchange::findClosestDateValue(std::string dateStr)
+{
+	std::istringstream date_s(dateStr);
+	struct tm date_c;
+	date_s >> std::get_time( &date_c, "%Y-%m-%d" );
+	std::time_t seconds = std::mktime( & date_c );
+
+	std::map<std::string, float>::iterator ret;
+	int diffRet = std::numeric_limits<int>::max();
+
+	for (std::map<std::string, float>::iterator it = _db.begin(); it != _db.end(); it++)
+	{
+		std::istringstream date_p(it->first);
+		struct tm date_test;
+		date_p >> std::get_time( &date_test, "%Y-%m-%d" );
+		std::time_t secondsToTest = std::mktime( & date_test );
+
+		int diffEval = seconds - secondsToTest;
+		std::cout << it->first << " seconds " << seconds << " secondsToTest " << secondsToTest << std::endl;
+		if (diffEval < 0)
+		{
+			return (ret->second);
+		}
+		if (diffEval < diffRet && diffEval > 0) 
+		{
+			diffRet = diffEval;
+			ret = it;
+		}
+	}
+
+	return (ret->second);
+}
+
 void	validate_date(std::string dateStr)
 {
 	std::tm timeinfo = {};
