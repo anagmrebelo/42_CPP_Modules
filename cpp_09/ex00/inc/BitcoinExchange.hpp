@@ -74,6 +74,14 @@ public:
 		}
 	};
 
+	class	DbError: public std::exception
+	{
+	public:
+		virtual const char * what() const throw() {
+			return "Error: Check database - it may be too recent or empty" ;
+		}
+	};
+
 private:
 	BitcoinExchange( void );
 
