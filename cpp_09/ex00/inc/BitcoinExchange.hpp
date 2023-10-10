@@ -17,7 +17,7 @@ public:
 	~BitcoinExchange( void );
 
 	//Methods
-	void printConversions();
+	void	printConversions();
 	float	findClosestDateValue(std::string dateStr);
 
 	//Exceptions
