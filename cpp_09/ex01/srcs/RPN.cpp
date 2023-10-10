@@ -19,6 +19,10 @@ RPN::~RPN( void ) {
 }
 
 // Assignation overload
+RPN & RPN::operator=( RPN const & rhs ) {
+	(void) rhs;
+	return *this;
+}
 
 // Methods
 void RPN::calculateRPN(std::string expr) {
