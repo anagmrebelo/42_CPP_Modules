@@ -2,7 +2,6 @@
 # define __ARRAY_H__
 
 template < typename T >
-
 class	Array
 {
 public:
@@ -14,12 +13,12 @@ public:
 	
 	~Array<T>( void )				//Destructor
 	{
-		delete this->_array;
+		delete[] this->_array;
 	}
 
 	Array<T>( unsigned int size ) : _size( size )	//Constructor
 	{
-		_array = new int[size];
+		_array = new T[size];
 		return ;
 	}
 
@@ -27,11 +26,11 @@ public:
 	{
 		size_t	i;
 
-		_array = new int[_size];
+		_array = new T[_size];
 		i = 0;
 		while (i < _size)
 		{
-			this[i] = src[i];
+			_array[i] = src._array[i];
 			i++;
 		}
 		return ;
@@ -40,14 +39,17 @@ public:
 	Array<T> &	operator=( Array<T> const & rhs )	//Assignation operator
 	{
 		size_t	i;
-	
-		delete _array;
+
+		if (this == &rhs)
+			return *this;
+		
+		delete[] _array;
 		_size = rhs.size();
-		_array = new int[_size];
+		_array = new T[_size];
 		i = 0;
 		while (i < _size)
 		{
-			this[i] = rhs[i];
+			_array[i] = rhs._array[i];
 			i++;
 		}
 		return (*this);
