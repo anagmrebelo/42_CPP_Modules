@@ -22,16 +22,16 @@ PmergeMe & PmergeMe::operator=(PmergeMe const & rhs) {
 }
 
 // Methods
-std::vector<int> PmergeMe::sortMerge( std::vector<int> vector ) {
+std::vector<int>	PmergeMe::sortMerge( std::vector<int> vector ) {
 	return vector;
 }
 
-std::list<int> PmergeMe::sortMerge( std::list<int> list ) {
+std::list<int>	PmergeMe::sortMerge( std::list<int> list ) {
 	return list;
 }
 
 std::vector<int>	PmergeMe::createVector(char **argv){
-	std::vector<int> vector;
+	std::vector<int>	vector;
 
 	for (int i = 1; argv[i]; i++) {
 		vector.insert(vector.end(), atoi(argv[i]));
@@ -40,7 +40,7 @@ std::vector<int>	PmergeMe::createVector(char **argv){
 }
 
 std::list<int>	PmergeMe::createList(char **argv){
-	std::list<int> list;
+	std::list<int>	list;
 
 	for (int i = 1; argv[i]; i++) {
 		list.push_back(atoi(argv[i]));
