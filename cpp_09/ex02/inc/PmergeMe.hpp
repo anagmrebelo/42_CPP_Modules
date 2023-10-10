@@ -12,8 +12,10 @@ class PmergeMe
 {
 public:
 
-	static void sortMerge( std::vector<int> vector);
-	static void sortMerge( std::list<int> list );
+	static std::vector<int> createVector(char **argv);
+	static std::list<int> createList(char **argv);
+	static std::vector<int> sortMerge( std::vector<int> vector);
+	static std::list<int> sortMerge( std::list<int> list );
 
 	class Error : public std::exception {
 		public:

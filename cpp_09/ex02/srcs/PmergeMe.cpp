@@ -21,44 +21,29 @@ PmergeMe & PmergeMe::operator=(PmergeMe const & rhs) {
 	return (*this);
 }
 
-// Utils
-std::string printVector( std::vector<int> vector ) {
-	std::ostringstream oss;
-
-	for (unsigned long i = 0; i < vector.size(); i++) {
-		if (i > 3) {
-			oss << "[...]";
-			break ;
-		}
-		oss << vector[i] << " ";
-	}
-	return (oss.str());
-}
-
-std::string printList( std::list<int> list ) {
-	std::ostringstream oss;
-	int counter = 0;
-
-	for (std::list<int>::iterator it = list.begin(); it != list.end(); it++) {
-		if (counter > 3) {
-			oss << "[...]";
-			break ;
-		}
-		oss << *it << " ";
-		counter++;
-	}
-	return (oss.str());
-}
-
 // Methods
-void PmergeMe::sortMerge( std::vector<int> vector ) {
-	std::cout << "Before: " << printVector(vector) << std::endl;
-	std::cout << "After: " << printVector(vector) << std::endl;
-	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector: " << NULL << " us" << std::endl;
+std::vector<int> PmergeMe::sortMerge( std::vector<int> vector ) {
+	return vector;
 }
 
-void PmergeMe::sortMerge( std::list<int> list ) {
-	std::cout << "Before: " << printList(list) << std::endl;
-	std::cout << "After: " << printList(list) << std::endl;
-	std::cout << "Time to process a range of " << list.size() << " elements with std::list: " << NULL << " us" << std::endl;
+std::list<int> PmergeMe::sortMerge( std::list<int> list ) {
+	return list;
+}
+
+std::vector<int>	PmergeMe::createVector(char **argv){
+	std::vector<int> vector;
+
+	for (int i = 1; argv[i]; i++) {
+		vector.insert(vector.end(), atoi(argv[i]));
+	}
+	return (vector);
+}
+
+std::list<int>	PmergeMe::createList(char **argv){
+	std::list<int> list;
+
+	for (int i = 1; argv[i]; i++) {
+		list.push_back(atoi(argv[i]));
+	}
+	return (list);
 }
