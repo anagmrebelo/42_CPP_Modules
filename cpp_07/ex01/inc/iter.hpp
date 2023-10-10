@@ -2,8 +2,7 @@
 # define __ITER_HPP__
 
 template< typename T >
-
-void	iter( T * add, size_t len, void (*func)(T))
+void	iter( T * add, size_t len, void (func)(const T &))
 {
 	size_t	i;
 
