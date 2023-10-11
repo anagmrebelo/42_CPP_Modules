@@ -44,15 +44,18 @@ std::vector<int>	PmergeMe::mergeVector( std::vector<int> left, std::vector<int> 
 	leftIt = left.begin();
 	rightIt = right.begin();
 
-	while (leftIt != left.end() || rightIt != right.end()) {
-		if (leftIt != left.end() && (rightIt == right.end() || *leftIt < *rightIt)) {
-			mergedVector.insert(mergedVector.end(), *leftIt);
+	while (leftIt != left.end() && rightIt != right.end()) {
+		if (*leftIt < *rightIt) {
+			mergedVector.push_back(*leftIt);
 			leftIt++;
 		} else {
-			mergedVector.insert(mergedVector.end(), *rightIt);
+			mergedVector.push_back(*rightIt);
 			rightIt++;
 		}
 	}
+	mergedVector.insert(mergedVector.end(), leftIt, left.end());
+	mergedVector.insert(mergedVector.end(), rightIt, right.end());
+
 	return mergedVector;
 }
 
@@ -75,7 +78,7 @@ std::string PmergeMe::printVector( std::vector<int> vector ) {
 	std::ostringstream oss;
 
 	for (unsigned long i = 0; i < vector.size(); i++) {
-		if (i > 3) {
+		if (i > 10) {
 			oss << "[...]";
 			break ;
 		}
@@ -119,8 +122,8 @@ std::list<int>	PmergeMe::mergeList( std::list<int> left, std::list<int> right ) 
 	leftIt = left.begin();
 	rightIt = right.begin();
 
-	while (leftIt != left.end() || rightIt != right.end()) {
-		if (leftIt != left.end() && (rightIt == right.end() || *leftIt < *rightIt)) {
+	while (leftIt != left.end() && rightIt != right.end()) {
+		if (*leftIt < *rightIt) {
 			mergedList.insert(mergedList.end(), *leftIt);
 			leftIt++;
 		} else {
@@ -128,6 +131,9 @@ std::list<int>	PmergeMe::mergeList( std::list<int> left, std::list<int> right ) 
 			rightIt++;
 		}
 	}
+	mergedList.insert(mergedList.end(), leftIt, left.end());
+	mergedList.insert(mergedList.end(), rightIt, right.end());
+	
 	return mergedList;
 }
 
@@ -147,8 +153,6 @@ std::list<int>	PmergeMe::insertMergeSortlist( std::list<int> list ) {
 	}
 }
 
-
-
 std::list<int>	PmergeMe::createList(char **argv){
 	std::list<int>	list;
 
@@ -163,7 +167,7 @@ std::string PmergeMe::printList( std::list<int> list ) {
 	int counter = 0;
 
 	for (std::list<int>::iterator it = list.begin(); it != list.end(); it++) {
-		if (counter > 3) {
+		if (counter > 10) {
 			oss << "[...]";
 			break ;
 		}
