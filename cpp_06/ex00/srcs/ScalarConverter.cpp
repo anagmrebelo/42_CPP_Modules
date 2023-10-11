@@ -6,7 +6,7 @@
 /*   By: arebelo <arebelo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:36:46 by arebelo           #+#    #+#             */
-/*   Updated: 2023/10/05 16:23:01 by arebelo          ###   ########.fr       */
+/*   Updated: 2023/10/11 13:26:09 by arebelo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ static std::string findType( std::string str )
 {
 	size_t	i;
 
-	if (str == "-inf" || str == "+inf" || str == "inf" || str == "nan")
+	if (str == "-inf" || str == "+inf" || str == "inf" || str == "nan" || str == "nanf")
 	{
 		return "special_case";
 	}
