@@ -5,10 +5,6 @@
 # include <fstream>
 # include <map>
 # include <string>
-# include <sstream>
-# include <ctime>
-# include <string>
-# include <limits>
 
 class BitcoinExchange
 {
