@@ -11,6 +11,11 @@ BitcoinExchange::BitcoinExchange( void )
 	return ;
 }
 
+BitcoinExchange::BitcoinExchange( BitcoinExchange const & src ) {
+	*this = src;
+	return ;
+}
+
 BitcoinExchange::BitcoinExchange( std::string dbPath, std::string requestPath ) : _dbPath(dbPath), _requestPath(requestPath)
 {
 	std::fstream argFile;
@@ -50,6 +55,15 @@ BitcoinExchange::~BitcoinExchange( void )
 {
 	return ;
 }
+
+//Assignation overload
+BitcoinExchange & BitcoinExchange::operator=( BitcoinExchange const & rhs ) {
+	this->_dbPath = rhs._dbPath;
+	this->_requestPath = rhs._requestPath;
+	this->_db = rhs._db;
+	return *this;
+}
+
 
 // Methods
 void BitcoinExchange::printConversions()

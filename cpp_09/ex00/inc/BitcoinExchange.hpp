@@ -10,7 +10,9 @@ class BitcoinExchange
 {
 public:
 	BitcoinExchange(std::string dbPath, std::string requestPath);
+	BitcoinExchange( BitcoinExchange const & src );
 	~BitcoinExchange( void );
+	BitcoinExchange & operator=( BitcoinExchange const & rhs );
 
 	//Methods
 	void	printConversions();
