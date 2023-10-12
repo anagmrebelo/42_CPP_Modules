@@ -12,9 +12,10 @@ Project to get familiarized with object-oriented language and main differences/a
 | Module 3  | 100          | Inheritance
 | Module 4  | 100          | Subtype polymorphism; abstract classes; interfaces
 | Module 5  | 100          | Try/Catch; Exceptions
-| Module 6  | WIP          | Different casts
-| Module 7  | WIP          | Templates
+| Module 6  | 100          | Different casts
+| Module 7  | 100          | Templates
 | Module 8  | WIP          | Templated containers; iterators; algorithm
+| Module 9  | WIP          | STL containers; merge-sort; insert-sort
 
 ## Usage
 
