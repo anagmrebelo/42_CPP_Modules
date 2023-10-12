@@ -161,6 +161,21 @@ int	main(void)
 			std::cerr << e.what() << '\n';
 		}
 	std::cout << std::endl << "----------------------------------------------------" << std::endl;
-
+	
+	
+	std::cout << std::endl << "12. test 10k numbers from 0 - 9 999" << std::endl;
+		try	
+		{
+			Span tenthousands = Span(10000);
+			for (int i = 0; i < 10000; i++)
+				tenthousands.addNumber(i);
+			std::cout <<  "LongestSpan: " << tenthousands.longestSpan() << std::endl;
+			std::cout <<  "ShorterSpan: " << tenthousands.shortestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	std::cout << std::endl << "----------------------------------------------------" << std::endl;
 	return (0);
 }	
