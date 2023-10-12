@@ -20,7 +20,7 @@ int	main( int argc, char **argv )
 	try
 	{
 		std::cout << "1. Trying to find 2 in vector<1, 2, 3, 4, 5>" << std::endl;
-		easyfind(arr_int, 2);	
+		std::cout << *easyfind(arr_int, 2) << std::endl;;	
 	}
 	catch(const std::exception & e)
 	{
@@ -33,7 +33,7 @@ int	main( int argc, char **argv )
 	try
 	{
 		std::cout << "2. Trying to find 6 in vector<1, 2, 3, 4, 5>" << std::endl;
-		easyfind(arr_int, 6);	
+		std::cout << *easyfind(arr_int, 6) << std::endl;	
 	}
 	catch(const std::exception & e)
 	{
@@ -46,7 +46,7 @@ int	main( int argc, char **argv )
 	try
 	{
 		std::cout << "3. Trying to find 2 in list<1, 2, 3, 4, 5>" << std::endl;
-		easyfind(lst_int, 2);
+		std::cout << *easyfind(lst_int, 2) << std::endl;;
 	}
 	catch(const std::exception & e)
 	{
@@ -60,7 +60,7 @@ int	main( int argc, char **argv )
 	try
 	{
 		std::cout << "4. Trying to find 6 in list<1, 2, 3, 4, 5>" << std::endl;
-		easyfind(lst_int, 6);	
+		std::cout << *easyfind(lst_int, 6) << std::endl;	
 	}
 	catch(const std::exception & e)
 	{
