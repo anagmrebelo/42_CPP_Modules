@@ -151,8 +151,20 @@ void validate_value(std::string valueStr)
 
 void validate_value_max(std::string valueStr)
 {
+	float value;
+
 	validate_value(valueStr);
-	if (stof(valueStr) > 1000)
+
+	try
+	{
+		value = stof(valueStr);
+	}
+	catch (const std::exception &e)
+	{
+		throw BitcoinExchange::InvalidValue();
+	}
+
+	if (value > 1000)
 		throw BitcoinExchange::MaxValue();
 }
 
