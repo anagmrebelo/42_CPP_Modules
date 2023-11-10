@@ -1,93 +1,109 @@
 #ifndef __BITCOINEXCHANGE_HPP__
-# define __BITCOINEXCHANGE_HPP__
+#define __BITCOINEXCHANGE_HPP__
 
-# include <iostream>
-# include <fstream>
-# include <map>
-# include <string>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <string>
 
 class BitcoinExchange
 {
 public:
 	BitcoinExchange(std::string dbPath, std::string requestPath);
-	BitcoinExchange( BitcoinExchange const & src );
-	~BitcoinExchange( void );
-	BitcoinExchange & operator=( BitcoinExchange const & rhs );
+	BitcoinExchange(BitcoinExchange const &src);
+	~BitcoinExchange(void);
+	BitcoinExchange &operator=(BitcoinExchange const &rhs);
 
-	//Methods
-	void	printConversions();
-	float	findClosestDateValue(std::string dateStr);
+	// Methods
+	void printConversions();
+	float findClosestDateValue(std::string dateStr);
 
-	//Exceptions
-	class	CannotOpenFile : public std::exception
+	// Exceptions
+	class CannotOpenFile : public std::exception
 	{
 	public:
-		CannotOpenFile(std::string fileName){
+		CannotOpenFile(std::string fileName)
+		{
 			std::cout << fileName;
 			if (fileName != "")
 				std::cout << " - ";
 		}
-		virtual const char * what() const throw() {
-			return "Error: could not open file." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: could not open file.";
 		}
 	};
 
-	class	InvalidDate : public std::exception
+	class InvalidFileHeader : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: invalid date." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: invalid file header.";
 		}
 	};
 
-	class	InvalidValue : public std::exception
+	class InvalidDate : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: invalid value." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: invalid date.";
 		}
 	};
 
-	class	NegativeValue : public std::exception
+	class InvalidValue : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: not a positive number." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: invalid value.";
 		}
 	};
 
-	class	MaxValue : public std::exception
+	class NegativeValue : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: too large a number." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: not a positive number.";
 		}
 	};
 
-	class	InvalidFileStruct : public std::exception
+	class MaxValue : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: invalid line structure." ;
+		virtual const char *what() const throw()
+		{
+			return "Error: too large a number.";
 		}
 	};
 
-	class	DbError: public std::exception
+	class InvalidFileStruct : public std::exception
 	{
 	public:
-		virtual const char * what() const throw() {
-			return "Error: Check database - it may be too recent or empty" ;
+		virtual const char *what() const throw()
+		{
+			return "Error: invalid line structure.";
+		}
+	};
+
+	class DbError : public std::exception
+	{
+	public:
+		virtual const char *what() const throw()
+		{
+			return "Error: Check database - it may be too recent or empty";
 		}
 	};
 
 private:
-	BitcoinExchange( void );
+	BitcoinExchange(void);
 
-	std::string	_dbPath;
-	std::string	_requestPath;
+	std::string _dbPath;
+	std::string _requestPath;
 
 	std::map<std::string, float> _db;
 };
 
-# endif
-
+#endif

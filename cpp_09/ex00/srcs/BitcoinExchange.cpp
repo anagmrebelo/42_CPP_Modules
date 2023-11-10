@@ -27,7 +27,7 @@ BitcoinExchange::BitcoinExchange(std::string dbPath, std::string requestPath) : 
 		throw BitcoinExchange::CannotOpenFile("db file");
 
 	std::istream &header = getline(argFile, line);
-	if (!header)
+	if (!header || line != "date,exchange_rate")
 		throw BitcoinExchange::DbError();
 	while (getline(argFile, line))
 	{
@@ -76,7 +76,8 @@ void BitcoinExchange::printConversions()
 	if (argFile.fail())
 		throw BitcoinExchange::CannotOpenFile(_requestPath);
 
-	getline(argFile, line);
+	if (!getline(argFile, line) || line != "date | value")
+		throw BitcoinExchange::InvalidFileHeader();
 	while (getline(argFile, line))
 	{
 		try
