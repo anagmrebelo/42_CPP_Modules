@@ -1,22 +1,23 @@
 #include "BitcoinExchange.hpp"
 
-void	validate_date(std::string dateStr);
-void	validate_value(std::string valueStr);
-void	validate_value_max(std::string valueStr);
-void	validate_structure(std::string line, std::string del);
+void validate_date(std::string dateStr);
+void validate_value(std::string valueStr);
+void validate_value_max(std::string valueStr);
+void validate_structure(std::string line, std::string del);
 
 // Constructors
-BitcoinExchange::BitcoinExchange( void )
+BitcoinExchange::BitcoinExchange(void)
 {
-	return ;
+	return;
 }
 
-BitcoinExchange::BitcoinExchange( BitcoinExchange const & src ) {
+BitcoinExchange::BitcoinExchange(BitcoinExchange const &src)
+{
 	*this = src;
-	return ;
+	return;
 }
 
-BitcoinExchange::BitcoinExchange( std::string dbPath, std::string requestPath ) : _dbPath(dbPath), _requestPath(requestPath)
+BitcoinExchange::BitcoinExchange(std::string dbPath, std::string requestPath) : _dbPath(dbPath), _requestPath(requestPath)
 {
 	std::fstream argFile;
 	std::string line;
@@ -25,10 +26,10 @@ BitcoinExchange::BitcoinExchange( std::string dbPath, std::string requestPath ) 
 	if (argFile.fail())
 		throw BitcoinExchange::CannotOpenFile("db file");
 
-	std::istream& header = getline(argFile, line);
+	std::istream &header = getline(argFile, line);
 	if (!header)
 		throw BitcoinExchange::DbError();
-	while(getline( argFile, line ))
+	while (getline(argFile, line))
 	{
 		try
 		{
@@ -47,23 +48,23 @@ BitcoinExchange::BitcoinExchange( std::string dbPath, std::string requestPath ) 
 	}
 
 	argFile.close();
-	return ;
+	return;
 }
 
 // Destructor
-BitcoinExchange::~BitcoinExchange( void )
+BitcoinExchange::~BitcoinExchange(void)
 {
-	return ;
+	return;
 }
 
-//Assignation overload
-BitcoinExchange & BitcoinExchange::operator=( BitcoinExchange const & rhs ) {
+// Assignation overload
+BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
+{
 	this->_dbPath = rhs._dbPath;
 	this->_requestPath = rhs._requestPath;
 	this->_db = rhs._db;
 	return *this;
 }
-
 
 // Methods
 void BitcoinExchange::printConversions()
@@ -76,7 +77,7 @@ void BitcoinExchange::printConversions()
 		throw BitcoinExchange::CannotOpenFile(_requestPath);
 
 	getline(argFile, line);
-	while(getline( argFile, line ))
+	while (getline(argFile, line))
 	{
 		try
 		{
@@ -88,13 +89,13 @@ void BitcoinExchange::printConversions()
 			float valueFloat = std::stof(valueStr);
 
 			std::map<std::string, float>::iterator db_it = _db.find(dateStr);
-			float	db_float;
-    		if(db_it == _db.end())
-        		db_float = findClosestDateValue(dateStr); 
-    		else
+			float db_float;
+			if (db_it == _db.end())
+				db_float = findClosestDateValue(dateStr);
+			else
 				db_float = db_it->second;
 
-			std::cout << dateStr << " => " << valueFloat << " = " <<  valueFloat * db_float << std::endl;
+			std::cout << dateStr << " => " << valueFloat << " = " << valueFloat * db_float << std::endl;
 		}
 		catch (std::exception &e)
 		{
@@ -103,7 +104,7 @@ void BitcoinExchange::printConversions()
 	}
 
 	argFile.close();
-	return ;
+	return;
 }
 
 // Utils
@@ -114,30 +115,32 @@ float BitcoinExchange::findClosestDateValue(std::string dateStr)
 		throw BitcoinExchange::DbError();
 	for (std::map<std::string, float>::iterator it = _db.begin(); it != _db.end(); it++)
 	{
-			
+
 		if (dateStr < it->first)
 		{
 			if (it == prevIt)
 				throw BitcoinExchange::DbError();
 			else
 				return prevIt->second;
-		} 
+		}
 		prevIt = it;
 	}
 
 	return (_db.begin()->second);
 }
 
-void	validate_value(std::string valueStr)
+void validate_value(std::string valueStr)
 {
 	unsigned long dotCounter = 0;
-	for (unsigned long i = 0; i < valueStr.length(); i++) {
-		if (!isdigit(valueStr[i]) && valueStr[i] != '.') {
+	for (unsigned long i = 0; i < valueStr.length(); i++)
+	{
+		if (!isdigit(valueStr[i]) && valueStr[i] != '.')
+		{
 			if (valueStr[i] == '-' && i == 0)
 				throw BitcoinExchange::NegativeValue();
 			throw BitcoinExchange::InvalidValue();
 		}
-				
+
 		if (valueStr[i] == '.')
 			dotCounter++;
 	}
@@ -145,7 +148,7 @@ void	validate_value(std::string valueStr)
 		throw BitcoinExchange::InvalidValue();
 }
 
-void	validate_value_max(std::string valueStr)
+void validate_value_max(std::string valueStr)
 {
 	validate_value(valueStr);
 	if (stof(valueStr) > 1000)
@@ -169,16 +172,17 @@ void validate_structure(std::string line, std::string del)
 {
 	int delCounter = countOcurrences(line, del);
 
-	if (delCounter != 1 )
+	if (delCounter != 1)
 		throw BitcoinExchange::InvalidFileStruct();
 }
 
-bool isLeap(int year) 
-{ 
-	return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)); 
-} 
+bool isLeap(int year)
+{
+	return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
+}
 
-bool	isInvalidNumber(std::string str){
+bool isInvalidNumber(std::string str)
+{
 	for (unsigned long i = 0; i < str.length(); i++)
 	{
 		if (!isdigit(str[i]))
@@ -187,16 +191,16 @@ bool	isInvalidNumber(std::string str){
 	return (false);
 }
 
-void	validate_date(std::string dateStr)
+void validate_date(std::string dateStr)
 {
 	if (dateStr.length() != 10)
-    	throw BitcoinExchange::InvalidDate();
+		throw BitcoinExchange::InvalidDate();
 	if (dateStr[4] != '-' || dateStr[7] != '-')
-    	throw BitcoinExchange::InvalidDate();
+		throw BitcoinExchange::InvalidDate();
 
-	std::string yStr = dateStr.substr(0,4);
-	std::string mStr = dateStr.substr(5,2);
-	std::string dStr = dateStr.substr(8,2);
+	std::string yStr = dateStr.substr(0, 4);
+	std::string mStr = dateStr.substr(5, 2);
+	std::string dStr = dateStr.substr(8, 2);
 
 	if (isInvalidNumber(yStr) || isInvalidNumber(mStr) || isInvalidNumber(dStr))
 		throw BitcoinExchange::InvalidDate();
@@ -205,17 +209,22 @@ void	validate_date(std::string dateStr)
 	int m = stoi(mStr);
 	int d = stoi(dStr);
 
-	if (m < 1 || m > 12 || d < 1 || d > 31) 
-    	throw BitcoinExchange::InvalidDate();
+	if (m < 1 || m > 12 || d < 1 || d > 31)
+		throw BitcoinExchange::InvalidDate();
 
-	if (m == 2) 
-    { 
-        if (isLeap(y) && d > 29)
-    		throw BitcoinExchange::InvalidDate();
-        else if (d > 28)
-    		throw BitcoinExchange::InvalidDate();
-    } 
-  
-    if ((m == 4 || m == 6 ||  m == 9 || m == 11) && d > 30)
-        throw BitcoinExchange::InvalidDate();
+	if (m == 2)
+	{
+		if (isLeap(y))
+		{
+			if (d > 29)
+				throw BitcoinExchange::InvalidDate();
+		}
+		else if (d > 28)
+			throw BitcoinExchange::InvalidDate();
+	}
+
+	if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)
+	{
+		throw BitcoinExchange::InvalidDate();
+	}
 }
