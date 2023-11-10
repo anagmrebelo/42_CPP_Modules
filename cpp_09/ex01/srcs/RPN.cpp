@@ -64,7 +64,7 @@ static void validateExpr(std::string expr)
 	{
 		if (i % 2 != 0 && expr[i] == ' ')
 			continue;
-		if (isdigit(expr[i]) || isOperator(expr[i]))
+		else if (i % 2 == 0 && (isdigit(expr[i]) || isOperator(expr[i])))
 			continue;
 		else
 			throw RPN::Error();
